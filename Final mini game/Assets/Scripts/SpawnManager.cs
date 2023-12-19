@@ -13,8 +13,8 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnRandomAmountOfEnemies());
-        SpawnCollectibleObject();
+        //StartCoroutine(SpawnRandomAmountOfEnemies());
+        //SpawnCollectibleObject();
     }
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(collectibleObject, RandomSpawnPosition(), collectibleObject.transform.rotation);
         }
+        coinAmount = 2;
     }
 
     Vector3 RandomSpawnPosition()
@@ -58,5 +59,10 @@ public class SpawnManager : MonoBehaviour
                 Instantiate(enemyObject, RandomSpawnPosition(), enemyObject.transform.rotation);
             }
         }
+    }
+
+    public void StartCreatingZombies()
+    {
+        StartCoroutine(SpawnRandomAmountOfEnemies());
     }
 }
